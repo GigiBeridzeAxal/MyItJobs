@@ -347,6 +347,15 @@ select{
 
 @media (max-width:1000px) {
      
+    .light1{
+        display: none;
+    }
+    .light2{
+        display: none;
+    }
+    .light3{
+        display: none;
+    }
     .postjobframe{
         max-width: 300px;
     }

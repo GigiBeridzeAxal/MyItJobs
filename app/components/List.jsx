@@ -100,9 +100,10 @@ export default function List() {
        console.log(dataer.data.length)
        console.log(dataer.data)
        setdatalist(dataer.data)
-       setTimeout(() => {
+       setinterval(() => {
         setloaded(true)
-       }, 5000);
+       }, 3000);
+       
        
 
 
