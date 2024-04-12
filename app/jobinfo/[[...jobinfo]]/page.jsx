@@ -23,7 +23,7 @@ export default function page() {
 
       const getbackend = async() => {
         
-        const get = await axios.get('http://localhost:3500/')
+        const get = await axios.get('https://myitjobsbackend.onrender.com')
 
         
        

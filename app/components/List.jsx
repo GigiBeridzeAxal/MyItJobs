@@ -96,7 +96,7 @@ export default function List() {
    
     const getlist = async() => {
 
-       const dataer = await axios.get('http://localhost:3500/')
+       const dataer = await axios.get('https://myitjobsbackend.onrender.com')
        console.log(dataer.data.length)
        console.log(dataer.data)
        setdatalist(dataer.data)

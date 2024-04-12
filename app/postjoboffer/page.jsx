@@ -24,7 +24,7 @@ export default function page() {
 
 
   
-  const send = await axios.post('http://localhost:3500/' , {
+  const send = await axios.post('https://myitjobsbackend.onrender.com' , {
     JobSelection,
 
 
