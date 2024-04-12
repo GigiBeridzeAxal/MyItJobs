@@ -100,11 +100,10 @@ export default function List() {
        console.log(dataer.data.length)
        console.log(dataer.data)
        setdatalist(dataer.data)
-       setinterval(() => {
-        setloaded(true)
+       setInterval(() => {
+          setloaded(true)
        }, 3000);
-       
-       
+   
 
 
     }
