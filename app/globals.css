@@ -2,32 +2,412 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+
+body{
+    background-color: #111827;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: #050a1a;
+}
+.headerframe{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+.MyIt{
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 4px;
+    color: rgb(215, 215, 215);
+}
+.left{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.center{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.signin{
+    border: 1px solid white;
+    padding: 10px;
+    background: none;
+    width: 100px;
+    border-radius: 5px;
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.postoffer{
+    background-color: #4338ca;
+    border: 1px solid #4338ca;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.gapper{
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+.listframe{
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+    display: flex;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    width: 95%;
+
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jobslist{
+   box-shadow: 0.5px 0.5px 1px 0.5px #3f4b5e;
+   width: 500px;
+   height: 176px;
+   
+}
+.up{
+    margin-bottom: 15px;
+}
+.sua{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    gap: 10px;
+}
+.education{
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+.joblogos{
+    border-radius: 10px;
+}
+.welcome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 128px;
+    margin-bottom: 128px;
+
+}
+.welcomeframe{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+}
+.weltittle{
+    color: white;
+    font-size: 44px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.description{
+    max-width: 600px;
+    color: white;
+    text-align: center;
+}
+.welbtn{
+    color: white;
+    background-color: #4338ca;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.light1{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    background-color: white;
+    box-shadow: 15px 15px 250px 55px white;
+}
+.light2{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    background-color: white;
+    box-shadow: 15px 15px 250px 55px white;
+}
+.light3{
+    position: absolute;
+    top: 40%;
+    left: 90%;
+    background-color: white;
+    box-shadow: 15px 15px 250px 55px white;
+}
+.listframe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.listsframer{
+    width: 85%;
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    
+}
+.search{
+
+}
+.search input{
+    background-color: #3f4b5e;
+    width: 350px;
+
+
+    outline: 0;
+    border: 0;
+    color: white; 
+}
+.searchlist{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 16px;
+}
+.choosener{
+    display: flex;
+    gap: 5px;
+    color: white;
+    align-items:  center;
+    justify-content: center;
+}
+.customcheckbox{
+    width: 15px;
+    height: 15px;
+    background-color: #3f4b5e;
+    border-radius: 3px;
+    border: 1px solid rgb(99, 99, 99);
+
+}
+.search{
+    background-color: #3f4b5e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 5px;
+}
+.emailsender{
+    display: flex;
+    align-items: center;
+   justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    height: 100vh;
+}
+.frameforsendmail{
+    display: flex;
+    align-items: center;
+   justify-content: space-evenly;
+   width: 100%;
+
+    gap: 10px;
+    
+}
+.frameforsendmail input{
+    margin-bottom: 10px;
+    background-color: #3f4b5e;
+    padding: 10px;
+    border-radius: 5px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    gap: 10px;
+}
+textarea{
+    padding: 5px;
+    width: 500px;
+    background-color: #3f4b5e;
+    border-radius: 7px;
+}
+form input{
+    width: 500px ;
+}
+label{
+    width: 500px;
+    display: flex;
+
+}
+.postjob{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+}
+.postjobframe{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 10px;
+    border-radius: 10px;
+}
+.jobchooser{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+select{
+    width: 200px;
+    padding: 10px;
+    
+
+}
+.hybrid{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+}
+.remote{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    color: white;
+}
+.companyiess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.companyframe{
+    max-width: 500px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+@media (max-width:1000px) {
+     
+    .postjobframe{
+        max-width: 300px;
+    }
+    .left{
+        display: none;
+    }
+    .center{
+        font-size: 13px;
+    }
+    .right{
+        font-size: 13px;
+    }
+    .postoffer{
+        display: none;
+    }
+    .jobslist{
+        max-width: 75%;
+    }
+    .searchlist{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        max-width: 500px;
+    }
+    .list{
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .listsframer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .flexavi{
+        max-width: 95%;
+    }
+    .jobslist{
+        max-width: 100%;
+    }
+    .search{
+        max-width: 300px;
+    }
+    .mobflexedr{
+        display: none;
+    }
+    .frameforsendmail{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    form{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .emailsender{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+    }
+    form input{
+        max-width: 300px;
+    }
+    textarea{
+        max-width: 300px;
+    }
+    .imre{
+        display: none;
+    }
+   
+    
 }
