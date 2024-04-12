@@ -3,6 +3,14 @@ import React from 'react'
 
 export default function page() {
   return (
-    <SignUp></SignUp>
+    <div className="signframer">
+       
+       <div className="signer">
+       <SignUp></SignUp>
+
+       </div>
+
+
+    </div>
   )
 }
