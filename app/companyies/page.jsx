@@ -1,10 +1,11 @@
 import React from 'react'
-import Header from '../components/header'
+import Header from '../components/Header'
+
 
 export default function page() {
   return (
     <>
-            <Header></Header>
+           <Header></Header>
             <div className="companyiess">
 
 

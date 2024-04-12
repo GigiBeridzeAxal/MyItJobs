@@ -4,7 +4,9 @@ import {useSearchParams} from 'next/navigation'
 import emailjs from '@emailjs/browser'
 import { useAuth , UserButton , useUser } from '@clerk/nextjs'
 import axios  from 'axios'
-import Header from '@/app/components/header'
+import Header from '@/app/components/Header'
+
+
 
 
 
