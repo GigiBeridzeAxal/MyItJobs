@@ -171,6 +171,12 @@ a{
     justify-content: center;
 
 }
+.back{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 10px;
+}
 .listsframer{
     width: 85%;
     display: flex;
@@ -343,6 +349,9 @@ select{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.postjob{
+    flex-direction: column;
 }
 
 @media (max-width:1000px) {
