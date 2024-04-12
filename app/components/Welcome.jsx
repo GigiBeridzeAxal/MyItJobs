@@ -16,7 +16,7 @@ export default function Welcome() {
           <div className="description">
             იპოვე შენთვის სასურველი IT ტექნოლოგიის სამსახური და აისრულე შენი მიზნები MyITjobs - თან ერთად შეარჩიე სასურველი კადრი შენი IT სფეროსთვის
           </div>
-          <button className='welbtn' >იპოვე კადრი</button>
+          <a href='/postjoboffer' className='welbtn' >იპოვე კადრი</a>
          
  
  

@@ -154,6 +154,7 @@ export default function page() {
 
        <input  onChange={(e) => changesalary(e)} className='p-2' placeholder='Enter Your Salary $  ' type="text text-black " />
        <div className=" flex gap-2 jobtypeselector">
+   
          
          {hybrid == true ?          <button onClick={() => checkhybrid()} className="hybrid bg-emerald-500 ">Hybrid</button>  :   <button onClick={() => checkhybrid()} className="hybrid ">Hybrid</button>        }
          {Remote == true ?                   <button onClick={() => checkremote()} className="remote bg-emerald-500 ">Remote</button>  :            <button onClick={() => checkremote()} className="remote">Remote</button>       }

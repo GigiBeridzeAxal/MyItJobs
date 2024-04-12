@@ -117,11 +117,11 @@ export default function page() {
       
       </div>   )  : <div className='text-white' >Loading Please Wait</div>}
       <form ref={form} onSubmit={sendEmail}>
-      <label><img className='imre' width={20} src={'/Person.png'} alt="" /></label>
+      <label className='lable'><img className='imre' width={20} src={'/Person.png'} alt="" /></label>
       <input value={user.username} className='text-gray-300' type="text" name="user_name" />
-      <label><img className='imre' width={20} src={'/email.png'} alt="" /></label>
+      <label className='lable' ><img className='imre' width={20} src={'/email.png'} alt="" /></label>
       <input value={by} className='text-gray-300' type="email" name="user_email" />
-      <label><img className='imre' width={20} src={'/chat.png'} alt="" /></label>
+      <label className='lable'><img className='imre' width={20} src={'/chat.png'} alt="" /></label>
       <textarea  cols={50} rows={10}  placeholder='Subject' name="message" />
 
       <input type="submit" value="Send" />
