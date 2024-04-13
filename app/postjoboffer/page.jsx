@@ -170,7 +170,7 @@ export default function page() {
    <div className="jobchooser  "> <div className="job text-white">Select Your Job</div>  <select onChange={(e) => changejob(e)} >
     <option value="React">React</option>
     <option value="Javascript">Javascript</option>
-    <option value="PHP">PHP</option>
+    <option value="PHP">Php</option>
     <option value="Laravel">Laravel</option>
     <option value="NodeJs">NodeJs</option>
    </select></div>
