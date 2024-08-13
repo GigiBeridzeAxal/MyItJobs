@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser'
 import { useAuth , UserButton , useUser } from '@clerk/nextjs'
 import axios  from 'axios'
 import Header from '@/app/components/Header'
+import Loading from '@/app/components/Loading'
 
 
 
@@ -17,27 +18,62 @@ import Header from '@/app/components/Header'
 export default function page() {
   const { isLoaded, isSignedIn, user } = useUser();
     const idparam = useSearchParams().get('id')
-    const [datalist , setdata] = useState(['Loading'])
+    const [datalist , setdata] = useState([0])
     const [loaded , setloaded] = useState(false)
-    const [by , setby] = useState()
+    const [name , setname] = useState()
+    const [phone , setphone] = useState()
+    const [message , setmessage] = useState()
+
+
+
+    const SendEmail = (e) => {
+      e.preventDefault();
+      asyncfunc()
+      setmessage('')
+      setphone('')
+      setname('')
+
+    }
+
+
+
+      const asyncfunc = async() => {
+
+      const send = await axios.post(process.env.NEXT_PUBLIC_SendEmail , {
+        message:message,
+        phone:phone,
+        email:datalist[0].by,
+        name:name
+      })
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+ 
+
 
     useEffect(() => {
 
       const getbackend = async() => {
         
-        const get = await axios.get('https://myitjobsbackend.onrender.com')
+        const get = await axios.post(process.env.NEXT_PUBLIC_GetUserByJob , {id:idparam} )
 
         
        
 
-        setdata(get.data)
-    
+            setdata(get.data)
 
-        setTimeout(() => {
-           setloaded(true)
-           const byier = get.data.filter(data => {return idparam == ""? null : data._id.toLowerCase().includes(idparam)  }).map(item => setby(item.by))
 
-        }, 3000);
       
 
          
@@ -45,28 +81,13 @@ export default function page() {
       getbackend()
 
     },[])
-    const form = useRef()
 
 
 
-      const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs
-          .sendForm('service_xmkt6fx', 'template_tj9ueyk', form.current  , {
-            publicKey: 'pUKpLbSCtSlOPjH76',
-          })
-          .then(
-            () => {
-              console.log('SUCCESS!');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
-      };
+
+
       
-   if(!isLoaded || !loaded){
+   if(!isLoaded){
     return null
    }else{
   return (
@@ -80,7 +101,7 @@ export default function page() {
       <div  className="frameforsendmail">
       
 
-      {loaded == true ?  
+      {datalist[0] !== 0 ?  
         
         datalist.filter((item) => {return item.length == 0 ? setitemamount(true) :  idparam == '' ? item : item._id.toLowerCase().includes(idparam)} ).map(data =>   <div className='flex mobflexedr flexavi gap-5' >
         
@@ -115,17 +136,35 @@ export default function page() {
 
         
       
-      </div>   )  : <div className='text-white' >Loading Please Wait</div>}
-      <form ref={form} onSubmit={sendEmail}>
-      <label className='lable'><img className='imre' width={20} src={'/Person.png'} alt="" /></label>
-      <input value={user.username} className='text-gray-300' type="text" name="user_name" />
-      <label className='lable' ><img className='imre' width={20} src={'/email.png'} alt="" /></label>
-      <input value={by} className='text-gray-300' type="email" name="user_email" />
-      <label className='lable'><img className='imre' width={20} src={'/chat.png'} alt="" /></label>
-      <textarea  cols={50} rows={10}  placeholder='Subject' name="message" />
+      </div>   )  : <div></div>}
 
-      <input type="submit" value="Send" />
-    </form>
+      <form onSubmit={SendEmail}>
+
+        <div className="line">
+        <div className="inputtittle">სახელი<div className="star">*</div></div>
+        <input value={name} onChange={(e) => setname(e.target.value)} type="text" required   placeholder='გიგი ბერიძე'  />   
+        </div>
+
+        
+        <div className="line">
+        <div className="inputtittle">მიმღები<div className="star">*</div></div>
+        <input type="text" required value={datalist[0].by}   />   
+        </div>
+        <div className="line">
+        <div className="inputtittle">მობილურის ნომერი<div className="star">*</div></div>
+        <input value={phone} minLength={9} maxLength={9} onChange={(e) => setphone(e.target.value)} type="Number" required placeholder='593404836'   />   
+        </div>
+           
+           
+        <div className="line">
+        <div className="inputtittle">შეტყობინება<div className="star">*</div></div>
+        <textarea value={message} onChange={(e) => setmessage(e.target.value)} type="text" required placeholder='მოგესალმებით ჩემი სახელია ზაზა. მე ვარ გამოცდილი კანდიდატი თქვენი
+        განცხადებისთვის '    />   
+        </div>
+        <button className='w-[100%] jobinfobutton p-[10px] text-white bg-blue-500' type='submit' >გაგზავნა</button>
+
+      </form>
+     
 
       </div>
 

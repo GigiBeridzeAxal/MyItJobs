@@ -3,10 +3,11 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {useSearchParams} from 'next/navigation'
+import Loading from './Loading'
 
 export default function List() {
 
-  const [datalist , setdatalist] = useState(['loading'])
+  const [datalist , setdatalist] = useState([0])
   const [loaded , setloaded] = useState(false)
   const [itemamount , setitemamount] = useState(true)
 
@@ -96,13 +97,19 @@ export default function List() {
    
     const getlist = async() => {
 
-       const dataer = await axios.get('https://myitjobsbackend.onrender.com')
+       const dataer = await axios.get(process.env.NEXT_PUBLIC_BACKEND)
 
        setdatalist(dataer.data)
-       setInterval(() => {
-          setloaded(true)
-       }, 3000);
-   
+
+        setloaded(true)
+
+
+
+
+
+
+
+
 
 
     }
@@ -143,7 +150,7 @@ export default function List() {
       <div className="listsframer">
         
         
-        {loaded == true ?  
+        {datalist[0] !== 0 ?  
         
         datalist.filter((item) => {return item.length == 0 ? setitemamount(true) :  search == '' ? item : item.JobSelection.toLowerCase().includes(search)} ).map(data =>   <div className='flex flexavi gap-5' >
         <div className="jobslist bg-slate-800  p-2 ">
@@ -180,7 +187,7 @@ export default function List() {
 
         
       
-      </div>   )  : <div className='text-white' >Loading Please Wait</div>}
+      </div>   )  : <Loading></Loading>}
       
 
 
