@@ -116,8 +116,9 @@ export default function List() {
     getlist()
 
 
- },[])
 
+ },[])
+ 
   return (
     <div className="list">
       <div className="searchlist">

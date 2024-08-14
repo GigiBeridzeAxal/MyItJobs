@@ -488,12 +488,52 @@ input[type=radio] , input[type=checkbox]{
     animation: loading 0.75s ease infinite ;
 
 }
+.nameloader{
+    width: 100px;
+    height: 20px;
+    background-color: #111424;
+    animation: Loader 1s infinite linear;
+}
+.imgloader{
+    width: 35px;
+    border-radius: 50%;
+    height: 35px;
+    background-color: #111424;
+    animation: Loader 1s infinite linear;
+}
+
+@keyframes Loader {
+    1%{
+        background-color: #262836; 
+    }
+    50%{
+        background-color: #333648;
+    }
+    100%{
+        background-color: #212433;
+    }
+    
+}
 @keyframes loading {
     from{transform: rotate(0turn);}
     to{transform: rotate(1turn);}
      
 }
 
+@media (max-width:700px) {
+    .postofferframe {
+        width: 400px;
+    }
+    .postoffertittle{
+        display: none;
+    }
+    .radioinputs{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+}
 
 @media (max-width:1000px) {
      
@@ -561,7 +601,7 @@ input[type=radio] , input[type=checkbox]{
         justify-content: center;
         
     }
-    form{
+    .formjobinfo{
         
         display: flex;
         flex-direction: column;
@@ -573,7 +613,7 @@ input[type=radio] , input[type=checkbox]{
      align-items: center;
      justify-content: center;
     }
-    form input{
+    .formjobinfo input{
         max-width: 300px;
     }
     textarea{

@@ -10,9 +10,7 @@ export default function Header() {
   const { isLoaded, isSignedIn, user } = useUser();
 
    
-    if(!isLoaded){
-      return null
-    }else{
+
 
     
 
@@ -39,8 +37,13 @@ export default function Header() {
   
           <div className="right">
             {
-              isSignedIn ?   <div className='flex gapper text-white' >{user.username}  <UserButton afterSignOutUrl='/' ></UserButton></div>  :               <a href='/sign-in' className="signin">Sign-In</a>
+              isLoaded ?
+              
+                isSignedIn ?   <div className='flex gapper text-white' >{user.username}  <UserButton afterSignOutUrl='/' ></UserButton></div>  :               <a href='/sign-in' className="signin">Sign-In</a>
+              
+              :  <div className='flex gapper text-white userinfoloader' ><div className="nameloader"></div> <div className="imgloader"></div></div>
             }
+
 
               <Link href={{
                 pathname: '/postjoboffer'
@@ -53,6 +56,6 @@ export default function Header() {
       </div>
     )
    }
-  }
+  
 
 

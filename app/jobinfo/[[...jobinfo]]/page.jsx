@@ -138,7 +138,7 @@ export default function page() {
       
       </div>   )  : <div></div>}
 
-      <form onSubmit={SendEmail}>
+      <form className='formjobinfo' onSubmit={SendEmail}>
 
         <div className="line">
         <div className="inputtittle">სახელი<div className="star">*</div></div>
