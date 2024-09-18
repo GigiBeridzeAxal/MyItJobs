@@ -172,7 +172,7 @@ export default function List() {
 
         <div className="sua flex align-center text-center m-1 ">
           <div className="education bg-sky-900  p-2  text-white/90 ">{data.JobSkill}</div>
-          <div className="salary text-white/60  ">{data.salary ? data.salary + "$" : "Confedential!"}</div>
+          <div className="salary text-white/60  ">{Math.floor(data.salary) ? Math.floor(data.salary) + "$" : "Confedential!"}</div>
         </div>
 
         <div className="down flex justify-between m-1">
